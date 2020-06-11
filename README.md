@@ -8,3 +8,7 @@
 <p>As implementações mais utilizadas são Mojarra(Oracle) e MyFaces(Apache).</p>
 	
 <p>Os servidores de aplicação podem ser o GlassFish, Tomcat, WildFLy, entre outros. </p>
+
+<p>O JSF traz em si o conceito MVC - Model View Controller como padrão de arquitetura de software focado no reuso de código e divisão/distribuição do conceitos em 3 camadas: Model (manipulação dos dados), View (interação de usuário) e Controller (controla as ações do usuário, manipulando as requisições e respostas entre o usuário e ).</p>
+
+<p>Será utilizado o Maven (MVN) como ferramenta de gerenciamento e automação de construção (buid) de projetos, para gerenciar dependências através da arquitetura transparente orientada a plugins, para publicar projetos em um servidor web, para automatizar procedimentos legados, entre outros.
