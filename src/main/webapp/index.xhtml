@@ -4,11 +4,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
+<!-- A página index.html exibe para o usuário uma tabela contendo os lembretes
+ armazenados em memória. Utilizamos as bibliotecas HTML e CORE, e através delas
+  utilizamos o componente DataTable que acessa toda a lista de lembretes existente
+  em memória. -->
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Aplicação Web - Lembrete</title>
     </h:head>
     <h:body>
-        <h:outputText value="Ola mundo!"/>
+        <h:dataTable value="#{lembreteBean.lembretes}" var="lembrete">
+            <h:column>
+                <f:facet name="header">#</f:facet>
+                #{lembrete.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Título</f:facet>
+                #{lembrete.titulo}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Descrição</f:facet>
+                #{lembrete.descricao}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Início</f:facet>
+                <h:outputText value="#{lembrete.dataInicio.time}">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <h:link value="Editar" outcome="editar">
+                    <f:param name="lembrete" value="#{lembrete.id}"/>
+                </h:link>
+            </h:column>
+            <h:column>
+                <h:link value="Remover" outcome="remover">
+                    <f:param name="lembrete" value="#{lembrete.id}"/>
+                </h:link>
+            </h:column>
+        </h:dataTable>
     </h:body>
 </html>
