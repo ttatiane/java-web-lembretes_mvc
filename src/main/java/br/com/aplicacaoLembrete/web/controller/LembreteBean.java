@@ -3,6 +3,7 @@ package br.com.aplicacaoLembrete.web.controller;
 import br.com.aplicacaoLembrete.web.mapper.LembreteMapper;
 import br.com.aplicacaoLembrete.web.model.Lembrete;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
@@ -21,6 +22,11 @@ public class LembreteBean {
 
     private Lembrete lembrete;
     private LembreteMapper mapper = new LembreteMapper();
+
+    @PostConstruct
+    public void init() {
+        lembrete = new Lembrete();
+    }
 
     public Lembrete getLembrete() {
         return lembrete;

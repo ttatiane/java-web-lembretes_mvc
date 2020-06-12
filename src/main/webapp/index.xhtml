@@ -4,15 +4,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-<!-- A página index.html exibe para o usuário uma tabela contendo os lembretes
+<!-- A página index.xhtml exibe para o usuário uma tabela contendo os lembretes
  armazenados em memória. Utilizamos as bibliotecas HTML e CORE, e através delas
   utilizamos o componente DataTable que acessa toda a lista de lembretes existente
   em memória. -->
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Aplicação Web - Lembrete</title>
+
     </h:head>
     <h:body>
+        <h:link value="Novo lembrete" outcome="adicionar"/>
+
         <h:dataTable value="#{lembreteBean.lembretes}" var="lembrete">
             <h:column>
                 <f:facet name="header">#</f:facet>
