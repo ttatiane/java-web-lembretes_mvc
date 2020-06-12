@@ -4,8 +4,10 @@ import br.com.aplicacaoLembrete.web.mapper.LembreteMapper;
 import br.com.aplicacaoLembrete.web.model.Lembrete;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import java.util.List;
 
 /**
@@ -23,6 +25,8 @@ public class LembreteBean {
     private Lembrete lembrete;
     private LembreteMapper mapper = new LembreteMapper();
 
+    // método que faz o papel do construtor da classe LembreteBean. Como o construtor é importante
+    // para a classe, esse método init() atende as necessidades da aplicação.
     @PostConstruct
     public void init() {
         lembrete = new Lembrete();
@@ -35,4 +39,17 @@ public class LembreteBean {
     public List<Lembrete> getLembretes() {
         return mapper.getLembretes();
     }
+
+    public String adicionar() {
+        mapper.adicionar(lembrete);
+
+        lembrete = new Lembrete();
+
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage("Lembrete adicionado com sucesso!"));
+        context.getExternalContext().getFlash().setKeepMessages(true);
+
+        return "index.html";
+    }
+
 }
