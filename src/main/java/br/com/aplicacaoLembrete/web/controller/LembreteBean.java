@@ -62,7 +62,6 @@ public class LembreteBean {
             message.setSeverity(FacesMessage.SEVERITY_ERROR);
             FacesContext.getCurrentInstance().addMessage(null, message);
         }
-
     }
 
     public String remover() {
@@ -77,5 +76,16 @@ public class LembreteBean {
         return "index.html?faces-redirect=true";
     }
 
+    public String editar() {
+        mapper.editar(lembrete);
+
+        lembrete = new Lembrete();
+
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage("Lembrete editado com sucesso!"));
+        context.getExternalContext().getFlash().setKeepMessages(true);
+
+        return "index.html?faces-redirect=true";
+    }
 
 }
