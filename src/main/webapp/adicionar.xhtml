@@ -17,19 +17,19 @@
     <h:form>
         <h:panelGrid columns="3">
             <h:outputLabel value="Título: "/>
-            <h:inputText id="titulo" value="#{lembreteBean.lembrete.titulo}" required="true">
-                <f:validateLength minumum="3" maximum="255" />
+            <h:inputText id="titulo" value="#{lembreteBean.lembrete.titulo}" size="29" required="true">
+                <f:validateLength minimum="3" maximum="255" />
             </h:inputText>
             <h:message for="titulo" />
 
             <h:outputLabel value="Descrição: " />
-            <h:inputTextarea id="descricao" value="#{lembreteBean.lembrete.descricao}" required="true">
+            <h:inputTextarea id="descricao" value="#{lembreteBean.lembrete.descricao}" cols="25" required="true">
                 <f:validateLength minimum="3" maximum="255" />
             </h:inputTextarea>
             <h:message for="descricao" />
 
             <h:outputLabel value="Início: "/>
-            <h:inputText id="data-inicio" value="#{lembreteBean.lembrete.dataInicio}" required="true">
+            <h:inputText id="data-inicio" value="#{lembreteBean.lembrete.dataInicio}" size="10" required="true">
                 <f:convertDateTime pattern="dd/MM/yyyy" timezone="#{initParam.timezone}" />
             </h:inputText>
             <h:message for="data-inicio" />

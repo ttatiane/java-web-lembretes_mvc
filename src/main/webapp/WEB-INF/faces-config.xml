@@ -6,6 +6,14 @@
     http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
         version="2.0">
 
+    <!-- Configuração para carregar o arquivo Messages.properties -->
+    <application>
+        <locale-config>
+            <default-locale>pt_BR</default-locale>
+        </locale-config>
+        <message-bundle>Messages</message-bundle>
+    </application>
+
     <!-- Regras de navegação = regras de negócio que serão usados como rota
     entre o ManagedBean e as Views, de forma que diminua o acoplamento -->
     <navigation-rule>
