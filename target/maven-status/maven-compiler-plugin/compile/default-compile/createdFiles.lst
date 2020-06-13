@@ -1,0 +1,3 @@
+br\com\aplicacaoLembrete\web\mapper\LembreteMapper.class
+br\com\aplicacaoLembrete\web\controller\LembreteBean.class
+br\com\aplicacaoLembrete\web\model\Lembrete.class
