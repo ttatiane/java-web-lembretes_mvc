@@ -52,4 +52,18 @@ public class LembreteBean {
         return "index.html?faces-redirect=true"; // Redirecionando página (JSF faz distinção entre redirecionamento e forward)
     }
 
+    public void lembretePorId() {
+        lembrete = mapper.buscar(lembrete.getId());
+
+        if (lembrete == null || lembrete.getId() == 0) {
+            lembrete = new Lembrete();
+
+            FacesMessage message = new FacesMessage("Lembrete não encontrado.");
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        }
+
+    }
+
+
 }
