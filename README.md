@@ -1,4 +1,4 @@
-# java_web_mvc
+# java-web-lembretes_mvc
 <h2>Aplicação de lembrete utilizando a linguagem Java e API JSF.</h2>
 
 <h3>Implementação</h3>
