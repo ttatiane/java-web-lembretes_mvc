@@ -12,7 +12,7 @@
 
     <properties>
         <jsf.version>2.2.13</jsf.version>
-        <hibernate_validator.version>5.4.1.Final</hibernate_validator.version>
+        <hibernate_validator.version>5.4.2.Final</hibernate_validator.version>
         <compiler.version>3.6.1</compiler.version>
         <java.version>1.8</java.version>
     </properties>
